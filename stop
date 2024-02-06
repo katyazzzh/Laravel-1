@@ -1,0 +1,87 @@
+[33mcommit ac475821bf3da17d6173ecac5d3586ead49b1d32[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mproduction[m[33m)[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Tue Feb 6 12:53:42 2024 +0300
+
+    lesson 8: show title of first post where is_published=true
+
+[33mcommit 615212498879984e86b565542637f4fc3899b928[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Tue Feb 6 12:52:21 2024 +0300
+
+    lesson 8: show titles of posts where is_published=true
+
+[33mcommit 7be07481497729f089c6994a25f7ccd83d3f33b1[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Tue Feb 6 12:48:45 2024 +0300
+
+    lesson 8: show title of all posts with foreach
+
+[33mcommit 53352390d41880ca7c024c9a03c831aeb419a534[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 17:31:17 2024 +0300
+
+    lesson 6: show title of post with id=1
+
+[33mcommit 18660da79c437f0de6a50762d36ec59f77ebf57d[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 17:22:36 2024 +0300
+
+    lesson 6: changed MyPlaceController to PostController
+
+[33mcommit 5a0dfaad203b0797cd4f3377072105f55711f2df[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 17:10:20 2024 +0300
+
+    lesson 4: changed create posts table
+
+[33mcommit 5374bf63038ddca682de0a2ad89990a37f69c517[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 17:01:15 2024 +0300
+
+    lesson 4: created first model and migration
+
+[33mcommit 25beaebffac2d035e642472fd0107fceac237e75[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 15:30:54 2024 +0300
+
+    Reapply "lesson 3: added new controller"
+    
+    This reverts commit c867f7a6ef20cbfeeb4848b9198d9fd5467e0c3b.
+
+[33mcommit 1919f974c77b9e6e1eea8b7003866bb3a6ceb475[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 15:25:15 2024 +0300
+
+    lesson 3: fixed controller access
+
+[33mcommit c867f7a6ef20cbfeeb4848b9198d9fd5467e0c3b[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 15:21:40 2024 +0300
+
+    Revert "lesson 3: added new controller"
+    
+    This reverts commit c346ff5e42bf8291604ddf03fe044e153e4fdc32.
+
+[33mcommit b01190a6370063b556238ab9e7c12c4fc1651231[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 14:58:04 2024 +0300
+
+    lesson 3: added  to access controllers
+
+[33mcommit c346ff5e42bf8291604ddf03fe044e153e4fdc32[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 14:42:09 2024 +0300
+
+    lesson 3: added new controller
+
+[33mcommit 96da602679b07d572c6b847608b4b1b0904c6808[m
+Author: katyazzzh <madam.zheleznova@icloud.com>
+Date:   Mon Feb 5 14:32:48 2024 +0300
+
+    lesson 2: change initial route
+
+[33mcommit 2a908996cdec22a6a1295b68de555b972161a286[m
+Author: katyazzzh <plyto12@gmail.com>
+Date:   Mon Feb 5 14:25:36 2024 +0300
+
+    lesson 0: created laravel project
