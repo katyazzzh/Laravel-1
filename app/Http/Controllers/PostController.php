@@ -50,8 +50,8 @@ class PostController extends Controller
     }
 
     public function delete() {
-        $post = Post::find(2);
-        $post->delete();
+        $post = Post::withTrashed()->find(2);
+        $post->restore();
         /*
          * Добавили use SoftDeletes в модель Post
          * $table->softDeletes() в миграцию и обновили migrate:fresh
