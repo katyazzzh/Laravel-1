@@ -73,4 +73,20 @@ class PostController extends Controller
 
         dd($myPost->title);
     }
+
+    public function updateOrCreate() {
+        $updatedPost = [
+            'title' => 'updateOrCreate post from php',
+            'content' => 'updateOrCreate post content from php',
+            'image' => 'php updateOrCreate',
+            'likes' => 5,
+            'is_published' => 0,
+        ];
+
+        $post = Post::updateOrCreate([
+            'title' => 'updateOrCreate post from php'
+        ],$updatedPost);
+
+        dd($post->title);
+    }
 }
