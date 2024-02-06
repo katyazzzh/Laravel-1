@@ -50,11 +50,27 @@ class PostController extends Controller
     }
 
     public function delete() {
-        $post = Post::withTrashed()->find(2);
-        $post->restore();
+        $post = Post::find(2);
         /*
          * Добавили use SoftDeletes в модель Post
          * $table->softDeletes() в миграцию и обновили migrate:fresh
          */
+        $post->delete();
+    }
+
+    public function firstOrCreate() {
+        $anotherPost = [
+            'title' => 'firstOrCreate post from php',
+            'content' => 'firstOrCreate post content from php',
+            'image' => 'php firstOrCreate',
+            'likes' => 4,
+            'is_published' => 1,
+        ];
+
+        $myPost = Post::firstOrCreate([
+            'title' =>'firstOrCreate post from php'
+        ], $anotherPost);
+
+        dd($myPost->title);
     }
 }
