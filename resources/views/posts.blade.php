@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-First view!
+    @foreach($posts as $post)
+        {{$post->title}}
+    @endforeach
 </body>
 </html>
