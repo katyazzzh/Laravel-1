@@ -1,23 +1,29 @@
 @extends('layouts.main')
 @section('content')
 <div>
-    <div class="input-group mb-3">
-        <label for="basic-url" class="form-label">Title</label>
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Title" aria-label="Title">
+    <form action="{{route('post.store')}}" method="post">
+        @csrf
+        <div class="mt-3 input-group mb-3">
+            <label for="title" class="form-label">Title</label>
+            <div class="input-group">
+                <input type="text" name="title" class="form-control" placeholder="Title" aria-label="title">
+            </div>
         </div>
-    </div>
-    <div class="input-group mb-3">
-        <label for="basic-url" class="form-label">Description</label>
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Description" aria-label="Description">
+            <label for="content" class="form-label">Content</label>
+            <div class="input-group">
+                <textarea class="form-control" name="content" aria-label="content"></textarea>
+            </div>
         </div>
-    </div>
-    <div class="input-group">
-        <label for="basic-url" class="form-label">Content</label>
-        <div class="input-group">
-            <textarea class="form-control" aria-label="Content"></textarea>
+        <div class="mt-3 input-group mb-3">
+            <label for="image" class="form-label">Image</label>
+            <div class="input-group">
+                <input type="text" name="image" class="form-control" placeholder="Image" aria-label="image">
+            </div>
         </div>
-    </div>
+        <div class="mt-3 col-auto">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
 </div>
 @endsection

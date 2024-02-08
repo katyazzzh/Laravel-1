@@ -16,6 +16,16 @@ class PostController extends Controller
         return view('post.create');
     }
 
+    public function store() {
+        $data = request()->validate([
+            'title' => 'string',
+            'content' => 'string',
+            'image' => 'string'
+        ]);
+        Post::create($data);
+        return redirect()->route('post.index');
+    }
+
     public function update() {
         $post = Post::find(6);
         $post->update([

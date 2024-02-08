@@ -22,6 +22,9 @@ Route::get('/', function () {
 
 Route::get('/posts', [PostController::class,'index'])->name('post.index');
 Route::get('/posts/create', [PostController::class, 'create']);
+
+Route::post('/posts', [PostController::class, 'store'])->name('post.store');
+
 Route::get('/posts/update', [PostController::class, 'update']);
 Route::get('/posts/delete', [PostController::class, 'delete']);
 Route::get('/posts/first_or_create', [PostController::class, 'firstOrCreate']);
