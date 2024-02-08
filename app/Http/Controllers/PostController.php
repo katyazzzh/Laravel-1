@@ -30,16 +30,18 @@ class PostController extends Controller
         return view('post.show', compact('post'));
     }
 
-    public function update() {
-        $post = Post::find(6);
-        $post->update([
-            'title' => 'updated first post from php',
-            'content' => 'updated first post content from php',
-            'image' => 'php updated',
-            'likes' => 15,
-            'is_published' => 1,
+    public function edit(Post $post) {
+        return view('post.edit', compact('post'));
+    }
+
+    public function update(Post $post) {
+        $newData = request()->validate([
+            'title' => 'string',
+            'content' => 'string',
+            'image' => 'string'
         ]);
-        dd('updated');
+        $post->update($newData);
+        return redirect()->route('post.show', $post->id);
     }
 
     public function delete() {
