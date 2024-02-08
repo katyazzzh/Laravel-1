@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index() {
+        $post = Post::where('published', true);
         $posts = Post::all();
         return view('posts', compact('posts'));
     }
