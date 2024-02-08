@@ -44,13 +44,9 @@ class PostController extends Controller
         return redirect()->route('post.show', $post->id);
     }
 
-    public function delete() {
-        $post = Post::find(2);
-        /*
-         * Добавили use SoftDeletes в модель Post
-         * $table->softDeletes() в миграцию и обновили migrate:fresh
-         */
+    public function destroy(Post $post) {
         $post->delete();
+        return redirect()->route('post.index');
     }
 
     public function firstOrCreate() {
