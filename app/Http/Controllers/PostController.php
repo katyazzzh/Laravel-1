@@ -8,34 +8,12 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index() {
-        $post = Post::where('published', true);
         $posts = Post::all();
-        return view('posts', compact('posts'));
+        return view('post.index', compact('posts'));
     }
 
     public function create() {
-        $postsArr = [
-            [
-                'title' => 'first post from php',
-                'content' => 'first post content from php',
-                'image' => 'php',
-                'likes' => 20,
-                'is_published' => 1,
-            ],
-            [
-                'title' => 'second post from php',
-                'content' => 'second post content from php',
-                'image' => 'php2',
-                'likes' => 15,
-                'is_published' => 1,
-            ]
-        ];
-
-        foreach ($postsArr as $post) {
-            dump($post['title']);
-            Post::create($post);
-            dump('created');
-        }
+        return view('post.create');
     }
 
     public function update() {
