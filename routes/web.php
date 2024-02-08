@@ -32,9 +32,6 @@ Route::patch('/posts/{post}', [PostController::class, 'update'])->name('post.upd
 
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
-Route::get('/posts/first_or_create', [PostController::class, 'firstOrCreate']);
-Route::get('/posts/update_or_create', [PostController::class, 'updateOrCreate']);
-
 Route::get('/main', [MainController::class,'index'])->name('main.index');
 Route::get('/about', [AboutController::class,'index'])->name('about.index');
 Route::get('/contacts', [ContactsController::class,'index'])->name('contact.index');

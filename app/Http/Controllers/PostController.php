@@ -48,36 +48,4 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('post.index');
     }
-
-    public function firstOrCreate() {
-        $anotherPost = [
-            'title' => 'firstOrCreate post from php',
-            'content' => 'firstOrCreate post content from php',
-            'image' => 'php firstOrCreate',
-            'likes' => 4,
-            'is_published' => 1,
-        ];
-
-        $myPost = Post::firstOrCreate([
-            'title' =>'firstOrCreate post from php'
-        ], $anotherPost);
-
-        dd($myPost->title);
-    }
-
-    public function updateOrCreate() {
-        $updatedPost = [
-            'title' => 'updateOrCreate post from php',
-            'content' => 'updateOrCreate post content from php',
-            'image' => 'php updateOrCreate',
-            'likes' => 5,
-            'is_published' => 0,
-        ];
-
-        $post = Post::updateOrCreate([
-            'title' => 'updateOrCreate post from php'
-        ],$updatedPost);
-
-        dd($post->title);
-    }
 }
