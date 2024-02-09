@@ -21,6 +21,14 @@
                 <input type="text" name="image" class="form-control" placeholder="Image" aria-label="image">
             </div>
         </div>
+        <label for="category" class="form-label">Category</label>
+        <div class="input-group mb-3">
+            <select class="form-select" id="category" name="category_id">
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->category_name}}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="mt-3 col-auto">
             <button type="submit" class="btn btn-primary">Create</button>
         </div>

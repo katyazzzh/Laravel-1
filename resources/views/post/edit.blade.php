@@ -22,6 +22,15 @@
                 <input type="text" name="image" class="form-control" placeholder="Image" aria-label="image" value="{{$post->image}}">
             </div>
         </div>
+        <div class="input-group mb-3">
+            <select class="form-select" id="category" name="category_id">
+                @foreach($categories as $category)
+                    <option
+                        {{$category->id == $post->category->id ? 'selected' : ''}}
+                        value="{{$category->id}}">{{$category->category_name}}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="mt-3 col-auto">
             <button type="submit" class="btn btn-primary">Update</button>
         </div>
