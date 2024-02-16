@@ -1,39 +1,53 @@
 @extends('layouts.main')
 @section('content')
-<div>
-    <form action="{{route('post.update', $post)}}" method="post">
-        @csrf
-        @method('patch')
-        <div class="mt-3 input-group mb-3">
-            <label for="title" class="form-label">Title</label>
-            <div class="input-group">
-                <input type="text" name="title" class="form-control" placeholder="Title" aria-label="title" value="{{$post->title}}">
+    <div>
+        <form action="{{route('post.update', $post)}}" method="post">
+            @csrf
+            @method('patch')
+            <div class="mt-3 input-group mb-3">
+                <label for="title" class="form-label">Title</label>
+                <div class="input-group">
+                    <input type="text" name="title" class="form-control" placeholder="Title" aria-label="title"
+                           value="{{$post->title}}">
+                </div>
             </div>
-        </div>
-        <div class="input-group">
-            <label for="content" class="form-label">Content</label>
             <div class="input-group">
-                <textarea class="form-control" name="content" aria-label="content">{{$post->content}}</textarea>
+                <label for="content" class="form-label">Content</label>
+                <div class="input-group">
+                    <textarea class="form-control" name="content" aria-label="content">{{$post->content}}</textarea>
+                </div>
             </div>
-        </div>
-        <div class="mt-3 input-group mb-3">
-            <label for="image" class="form-label">Image</label>
-            <div class="input-group">
-                <input type="text" name="image" class="form-control" placeholder="Image" aria-label="image" value="{{$post->image}}">
+            <div class="mt-3 input-group mb-3">
+                <label for="image" class="form-label">Image</label>
+                <div class="input-group">
+                    <input type="text" name="image" class="form-control" placeholder="Image" aria-label="image"
+                           value="{{$post->image}}">
+                </div>
             </div>
-        </div>
-        <div class="input-group mb-3">
-            <select class="form-select" id="category" name="category_id">
-                @foreach($categories as $category)
-                    <option
-                        {{$category->id == $post->category->id ? 'selected' : ''}}
-                        value="{{$category->id}}">{{$category->category_name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mt-3 col-auto">
-            <button type="submit" class="btn btn-primary">Update</button>
-        </div>
-    </form>
-</div>
+            <div class="input-group mb-3">
+                <select class="form-select" id="category" name="category_id">
+                    @foreach($categories as $category)
+                        <option
+                            {{$category->id == $post->category->id ? 'selected' : ''}}
+                            value="{{$category->id}}">{{$category->category_name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            @foreach($tags as $tag)
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                           @foreach($post->tags as $postTag)
+                               {{$tag->id == $postTag->id ? 'checked' : ''}}
+                           @endforeach
+                           value="{{$tag->id}}" id="tag" name="tags[]">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        {{$tag->tag_name}}
+                    </label>
+                </div>
+            @endforeach
+            <div class="mt-3 col-auto">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+    </div>
 @endsection
