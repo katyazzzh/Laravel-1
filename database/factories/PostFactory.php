@@ -20,7 +20,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->jobTitle,
-            'content' => $this->faker->text,
+            'content' => $this->faker->realText,
             'image' => $this->faker->imageUrl,
             'likes' => random_int(1,1000),
             'is_published' => 1,
