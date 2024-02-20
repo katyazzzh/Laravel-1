@@ -43,7 +43,7 @@
                 </select>
             </div>
             @foreach($tags as $tag)
-                <div class="form-check">
+                <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox"
                            {{!empty(old('tags')) && (in_array($tag->id, old('tags'))) ? 'checked' : ''}}
                            value="{{$tag->id}}" id="tag" name="tags[]">

@@ -11,6 +11,7 @@ use App\Http\Controllers\Post\EditController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\Admin\Post\IndexController as IndexAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ use App\Http\Controllers\ContactsController;
 
 Route::get('/', function () {
     return 'hello';
+});
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/post', IndexAdminController::class)->name('admin.post.index');
 });
 
 Route::get('/posts', IndexController::class)->name('post.index');
