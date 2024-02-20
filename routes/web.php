@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Post\IndexController;
@@ -24,9 +25,7 @@ use App\Http\Controllers\Admin\Post\IndexController as IndexAdminController;
 |
 */
 
-Route::get('/', function () {
-    return 'hello';
-});
+Route::get('/', [HomeController::class, 'index']);
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/post', IndexAdminController::class)->name('admin.post.index');
 });
@@ -42,3 +41,7 @@ Route::delete('/posts/{post}', DestroyController::class)->name('post.destroy');
 Route::get('/main', [MainController::class, 'index'])->name('main.index');
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contact.index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
