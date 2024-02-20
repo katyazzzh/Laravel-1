@@ -25,8 +25,8 @@ use App\Http\Controllers\Admin\Post\IndexController as IndexAdminController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::group(['prefix' => 'admin'], function () {
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/post', IndexAdminController::class)->name('admin.post.index');
 });
 
