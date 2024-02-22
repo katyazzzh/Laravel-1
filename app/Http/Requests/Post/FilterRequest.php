@@ -24,7 +24,9 @@ class FilterRequest extends FormRequest
         return [
             'title' => 'string',
             'content' => 'string',
-            'category_id' => ''
+            'category_id' => '',
+            'page' => '',
+            'per_page' => ''
         ];
     }
 }
