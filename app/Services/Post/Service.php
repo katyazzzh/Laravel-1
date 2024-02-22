@@ -20,5 +20,6 @@ class Service
         unset($newData['tags']);
         $post->update($newData);
         $post->tags()->sync($tags);
+        return $post->fresh();
     }
 }
