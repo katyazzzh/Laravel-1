@@ -25,7 +25,7 @@ use App\Http\Controllers\Admin\Post\IndexController as IndexAdminController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/post', IndexAdminController::class)->name('admin.post.index');
 });
@@ -43,5 +43,3 @@ Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contact.index');
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
