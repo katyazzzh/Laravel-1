@@ -15,7 +15,7 @@ class AdminPanelMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->role !== 'admin') {
+        if(empty(auth()->user()) || auth()->user()->role !== 'admin') {
             return redirect()->route('home');
         }
         return $next($request);
